@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterhello/gridview_sample.dart';
 import 'package:flutterhello/image_sample.dart';
 
 void main() {
@@ -36,8 +37,17 @@ class HomePage extends StatelessWidget {
                 builder: (context) => new ImageSampleApp()));
           },
         ),
-        Text("content"),
-        Text("content"),
+        InkWell(
+          child: ListTile(
+            title: Text("GridView Sample"),
+            subtitle: Text("网格布局"),
+          ),
+          onTap: () {
+            //打开新页面
+            Navigator.of(context).push(new MaterialPageRoute(
+                builder: (context) => new GridviewSamplePage()));
+          },
+        ),
       ],
     );
   }
